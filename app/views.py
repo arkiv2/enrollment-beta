@@ -1,6 +1,7 @@
 from app import app
 from flask import render_template
-from models import Category, Item
+from models import *
+
 
 @app.context_processor
 def add_template_helpers():
