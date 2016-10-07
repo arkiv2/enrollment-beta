@@ -1,0 +1,38 @@
+<nav class="navbar item-catalog-navbar" id="main_navbar" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand navbar-left" href="{{ url_for('index')}}"><i class="icon-home"></i> Item Catalog - ValenceCorp</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown-grid">
+                    <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle"><i class="fa fa-lock"></i>&nbsp;<span class="">Account</span><span class="caret"></span></a>
+                    <div class="dropdown-grid-wrapper" role="menu">
+                        <ul class="dropdown-menu col-xs-12 col-sm-10 col-md-8 col-lg-7">
+                            <li>
+                                <div id="dropdown-account" class="carousel slide" >
+                                    <div class="row">
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                            <div class="carousel-inner">
+                                                {% include 'navbar/navbar-account/navbar-signin.html' %}
+                                                {% include 'navbar/navbar-account/navbar-signup.html' %}
+                                                {% include 'navbar/navbar-account/navbar-forgot.html' %}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4" style="border-left: 1px solid #e6e6e6;">
+                                            <ol class="carousel-indicators navbar-carousel-indicators" style="">
+                                                <li data-target="#dropdown-account" data-slide-to="0" class="active"><a href="#" class="">Sign In<span class="desc">Already have an account? Log in</span></a></li>
+                                                <li data-target="#dropdown-account" data-slide-to="1" class=""><a href="#" class="">Sign Up<span class="desc">Create new account</span></a></li>
+                                                <li data-target="#dropdown-account" data-slide-to="2" class=""><a href="#" class="">Forgot password?<span class="desc">Don't worry, it happens!</span></a></li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

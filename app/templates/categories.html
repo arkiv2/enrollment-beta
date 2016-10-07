@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class ="col-md-9">
+		<p class="lead">Item Categories</p>
+		{% for category in categories %}
+			<button class="md-trigger md-setperspective" data-modal="modal-{{ category.id }}">{{ category.name }}</button>
+		{% endfor %}
+		<div class="md-overlay"></div>
+	</div>
+	<!-- Modals -->
+	{% for category in categories %}
+		<div class="md-modal md-effect-1" id="modal-{{ category.id }}">
+			<div class="md-content">
+				<h3>{{ category.name }}</h3>
+				<div>
+					<p>This is a modal window. You can do the following things with it:</p>
+					<hr>
+					<img src="http://placehold.it/600x300" class="img-rounded img-responsive" alt="{{ category.name }}">
+					<hr>
+					<button onclick="location.href='{{ url_for('category', category_name=category.slug_name) }}'">Go to item page</button>
+					<button class="md-close">Close me!</button>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}
